@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Taskbook</title>
+		<!-- Tab Icon --><link rel="shortcut icon" href="code.ico"/>
+		<link rel="stylesheet" href="php_task.css"/>
+        <link rel= "stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+        <script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+        <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+		<script src="php_task.js"></script>
+    <style>
+.error {color: #FF0000;}
+</style>
+    </head>
+    <body>
+	<!--  ********** Login Page ******************** -->
+	       <form  id="log_valid" method="POST" action="valid.php">
+        Email:<input type="text" placeholder="Username" name='username'/><br/><br/>
+        Password: <input type="Password" placeholder="password" name='password'/><br/><br/>
+		<button id="login" type="submit" name="submit">Login</button>
+		<button id="signup" type="button">Signup</button>
+		  </form> 
+		  
+		  
+		  <!--  *********** Signup Dialog Box *************** -->
+    <div id="dialog" title="Signup dialog">
+	<p><span class="error">* Required Field.</span></p>
+	<form id='signup_dailog'  method="POST" action="db.php">
+				Name: <input type="text" placeholder="Name" id="name" name='name' required/> <span class="error">* <?php echo $nameErr;?></span><br/>
+				Email: <input type="email" placeholder="Email" id="email"name='email' required/> <span class="error">* <?php echo $emailErr;?></span><br/>
+				Password: <input type="password" placeholder="Password" id="pass" name='pass' required/> <span class="error">* <?php echo $passErr;?></span><br/>
+				Mobile: <input type="number" placeholder="Mobile Number" id="mob" name='mob' required/> <span class="error">* <?php echo $mobErr;?></span><br/>
+				Address: <textarea type="textarea" placeholder="Address" id="add" size=100 name='add'></textarea><br/><br/>
+	
+				<div id='subdiv'>
+				<button type="submit" id="sub">Submit</button>
+				</div>
+	</form>
+		</div>
+ 
+		
+    </body>
+	
+</html>
